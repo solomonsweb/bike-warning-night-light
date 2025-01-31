@@ -12,13 +12,20 @@ let b = 0
 let a = 0
 led.enable(true)
 basic.forever(function () {
-    basic.showLeds(`
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        `)
+    if (input.buttonIsPressed(Button.B)) {
+        basic.clearScreen()
+    }
+})
+basic.forever(function () {
+    if (a == 1) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    }
 })
 basic.forever(function () {
     if (a == 1) {
